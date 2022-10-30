@@ -14,7 +14,9 @@ const Pokemons = () => {
     const getOffset = currentPage === 1 ? 0 : (currentPage - 1) * LIMIT;
     const { pokemonsData, isLoadingPokemons, isErrorPokemons } = usePokemons(LIMIT, getOffset);
 
-
+    // Это нужно для сохранения значения PageCount между запросами
+    // иначе, во время запроса, будут пропадать кнопки пагинации
+    // TODO вынести в кастомный хук
     useEffect(() => {
         if (pokemonsData?.count && pokemonsData.count !== memoPageCount) {
             setMemoPageCount(pokemonsData.count / LIMIT)

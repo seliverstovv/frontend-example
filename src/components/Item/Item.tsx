@@ -1,3 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope -- Unaware of jsxImportSource */
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -8,7 +11,12 @@ const Item = ({ name }: { name: string }) => {
         <RouterLink to={name}>
             <ListItem disablePadding>
                 <ListItemButton>
-                    <ListItemText primary={name} />
+                    <ListItemText
+                        primary={name}
+                        css={css`
+                            text-transform: capitalize;
+                        `}
+                    />
                 </ListItemButton>
             </ListItem>
         </RouterLink>
