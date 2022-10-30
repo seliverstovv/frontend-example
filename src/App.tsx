@@ -2,7 +2,7 @@ import { SWRConfig } from 'swr';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import {
-    createHashRouter,
+    createBrowserRouter,
     RouterProvider,
 } from 'react-router-dom';
 import { fetcher } from './utils/fetcher';
@@ -11,7 +11,7 @@ import Pokemon from './pages/Pokemon';
 
 const theme = createTheme();
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Pokemons />,
