@@ -19,11 +19,9 @@ const MyList = ({ list, isLoading, limit }: { list: string[], isLoading: boolean
 
     return (
         <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            <nav aria-label="main mailbox folders">
-                <List>
-                    {list.map((name) => <Item key={name} name={name} />)}
-                </List>
-            </nav>
+            <List>
+                {list.map((name) => <Item key={name} name={name} />)}
+            </List>
         </Box>
     )
 }

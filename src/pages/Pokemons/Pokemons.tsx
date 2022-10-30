@@ -14,7 +14,7 @@ const Pokemons = () => {
     const getOffset = currentPage === 1 ? 0 : (currentPage - 1) * LIMIT;
     const { pokemonsData, isLoadingPokemons, isErrorPokemons } = usePokemons(LIMIT, getOffset);
 
-    // Это нужно для сохранения значения PageCount между запросами
+    // useEffect и useState нужны для сохранения значения PageCount между запросами
     // иначе, во время запроса, будут пропадать кнопки пагинации
     // TODO вынести в кастомный хук
     useEffect(() => {
@@ -33,7 +33,7 @@ const Pokemons = () => {
     return (
         <Container maxWidth="sm" sx={{ padding: 5 }}>
             <Paper sx={{ padding: 3 }}>
-                <Typography variant="h3">
+                <Typography variant="h3" sx={{ fontSize: 24 }}>
                     Pokemons list:
                 </Typography>
                 <List list={pokemonList} isLoading={isLoadingPokemons} limit={LIMIT} />

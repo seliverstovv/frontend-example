@@ -30,14 +30,7 @@ export type RouterParams = {
 
 const App = () => {
     return (
-        <SWRConfig
-            value={{
-                fetcher: fetcher,
-                // revalidateOnFocus: false,
-                // revalidateOnMount: false,
-                // revalidateOnReconnect: false
-            }}
-        >
+        <SWRConfig value={{ fetcher: fetcher }}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <RouterProvider router={router} />

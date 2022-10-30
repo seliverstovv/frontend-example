@@ -39,7 +39,7 @@ const Pokemon = () => {
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                     <Typography variant="h4" color="text.primary" gutterBottom sx={{ textTransform: 'capitalize' }}>
-                        Name: {pokemonData.name}
+                        {pokemonData.name}
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                         Height: {pokemonData.height} in
