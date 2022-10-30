@@ -32,7 +32,7 @@ const Pokemons = () => {
         <Container maxWidth="sm" sx={{ padding: 5 }}>
             <Paper sx={{ padding: 3 }}>
                 <Typography variant="h3">
-                Pokemons list:
+                    Pokemons list:
                 </Typography>
                 <List list={pokemonList} isLoading={isLoadingPokemons} limit={LIMIT} />
                 <Pagination
@@ -40,7 +40,7 @@ const Pokemons = () => {
                     count={pagesCount}
                     page={currentPage}
                     onChange={(e, page) => setCurrentPage(page)}
-                    sx={{ml: 'auto', mr: 'auto', width: 'fit-content', mt: 2}}
+                    sx={{ ml: 'auto', mr: 'auto', width: 'fit-content', mt: 2 }}
                 />
             </Paper>
         </Container>

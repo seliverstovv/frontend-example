@@ -1,4 +1,4 @@
-import useSWR from 'swr'
+import useSWRImmutable from 'swr/immutable'
 
 type Pokemon = { name: string; url: string };
 
@@ -10,7 +10,7 @@ type PokemonsResponse = {
 };
 
 export const usePokemons = (limit: number, offset: number) => {
-    const { data, error } = useSWR<PokemonsResponse>(`/pokemon?limit=${limit}&offset=${offset}`);
+    const { data, error } = useSWRImmutable<PokemonsResponse>(`/pokemon?limit=${limit}&offset=${offset}`);
 
     return {
         pokemonsData: data,
