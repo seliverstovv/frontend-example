@@ -16,10 +16,10 @@ const Pokemons = () => {
 
 
     useEffect(() => {
-        if (pokemonsData?.count) {
-            setMemoPageCount(pokemonsData.count)
+        if (pokemonsData?.count && pokemonsData.count !== memoPageCount) {
+            setMemoPageCount(pokemonsData.count / LIMIT)
         }
-    }, [pokemonsData])
+    }, [memoPageCount, pokemonsData])
 
     const pagesCount = Math.floor(memoPageCount || 1 / LIMIT);
     const pokemonList = pokemonsData?.results.map((item) => item.name) || [];
